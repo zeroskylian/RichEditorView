@@ -6,18 +6,17 @@ ZL.imageElements = function () {
 };
 
 ZL.findCIDImageURL = function () {
-  let images = imageElements();
+  let images = ZL.imageElements();
   let imgLinks = [];
   for (let i = 0; i < images.length; i++) {
     let url = images[i].getAttribute("src");
-    // if (url.indexOf("http:") > -1)
     imgLinks.push(url);
   }
   return JSON.stringify(imgLinks);
 };
 
 ZL.replaceImageSrc = function (info) {
-  let images = imageElements();
+  let images = ZL.imageElements();
   let screenWidth = parseInt(window.screen.availWidth * 0.9);
   for (let i = 0; i < images.length; i++) {
     let url = images[i].getAttribute("src");
