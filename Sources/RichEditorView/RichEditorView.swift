@@ -141,7 +141,9 @@ public class RichEditorWebView: WKWebView {
     // MARK: Initialization
     
     public override init(frame: CGRect) {
-        webView = RichEditorWebView()
+        let configuration = WKWebViewConfiguration()
+        configuration.setURLSchemeHandler(LocalImageURLSchemeHandler(), forURLScheme: "LocalImage")
+        webView = RichEditorWebView(frame: .zero, configuration: configuration)
         super.init(frame: frame)
         setup()
     }
