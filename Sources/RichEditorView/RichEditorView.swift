@@ -31,6 +31,9 @@ import WebKit
     /// For example, if there is an external link, and then the user taps it
     @objc optional func richEditor(_ editor: RichEditorView, shouldInteractWith url: URL) -> Bool
     
+    /// Called when the internal WKWebView begins loading a URLRequest that it does not know how to respond to
+    @objc optional func richEditorShouldInteracRequest(_ editor: RichEditorView, request: URLRequest) -> WKNavigationActionPolicy
+    
     /// Called when custom actions are called by callbacks in the JS
     /// By default, this method is not used unless called by some custom JS that you add
     @objc optional func richEditor(_ editor: RichEditorView, handle action: String)
@@ -478,6 +481,10 @@ public class RichEditorWebView: WKWebView {
                 }
             }
             return decisionHandler(WKNavigationActionPolicy.cancel);
+        }
+        
+        if let policy = delegate?.richEditorShouldInteracRequest?(self, request: navigationAction.request) {
+            return decisionHandler(policy)
         }
         
         // User is tapping on a link, so we should react accordingly
