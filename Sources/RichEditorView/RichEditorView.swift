@@ -109,7 +109,13 @@ public class RichEditorWebView: WKWebView {
     private var editingEnabledVar = true
     
     /// webview isInspectable
-    public var isInspectable: Bool = false
+    public var isInspectable: Bool = false {
+        didSet {
+            if #available(iOS 16.4, *) {
+                webView.isInspectable = self.isInspectable
+            }
+        }
+    }
         
     /// The HTML that is currently loaded in the editor view, if it is loaded. If it has not been loaded yet, it is the
     /// HTML that will be loaded into the editor view once it finishes initializing.
