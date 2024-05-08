@@ -24,7 +24,7 @@ ZL.replaceImageSrc = function (info) {
       images[i].setAttribute("src", info.LocalPathKey);
       let width = images[i].getAttribute("width");
       if (!width) {
-        images[i].style.display = "none";
+//        images[i].style.display = "none";
         images[i].onload = function (e) {
           let _width = e.target.width;
           console.log(_width);
@@ -43,7 +43,7 @@ ZL.replaceImageSrc = function (info) {
           //   let scale = _width / oldWidth;
           //   e.target.style.height = height * scale + "px";
           // }
-          e.target.style.display = "";
+//          e.target.style.display = "";
         };
       } else {
         width = width.replace("px", "");
