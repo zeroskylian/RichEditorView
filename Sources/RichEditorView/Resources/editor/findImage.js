@@ -38,11 +38,11 @@ ZL.replaceImageSrc = function (info) {
             _width = screenWidth;
           }
           e.target.style.width = _width + "px";
-          let height = e.target.height;
-          if (height && hasChangeWidth) {
-            let scale = _width / oldWidth;
-            e.target.style.height = height * scale + "px";
-          }
+          // let height = e.target.height;
+          // if (height && hasChangeWidth) {
+          //   let scale = _width / oldWidth;
+          //   e.target.style.height = height * scale + "px";
+          // }
           e.target.style.display = "";
         };
       } else {
@@ -57,13 +57,13 @@ ZL.replaceImageSrc = function (info) {
           }
           images[i].style.width = width + "px";
 
-          let height = images[i].getAttribute("height");
-          if (height && hasChangeWidth) {
-            let scale = width / oldWidth;
-            height = parseInt(height);
-            height = height * scale;
-            images[i].style.height = height + "px";
-          }
+          // let height = images[i].getAttribute("height");
+          // if (height && hasChangeWidth) {
+          //   let scale = width / oldWidth;
+          //   height = parseInt(height);
+          //   height = height * scale;
+          //   images[i].style.height = height + "px";
+          // }
         }
       }
       images[i].removeAttribute("width");
