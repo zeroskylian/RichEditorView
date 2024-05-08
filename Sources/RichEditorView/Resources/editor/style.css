@@ -33,6 +33,8 @@ body {
   word-break: break-all;
   overflow: auto;
   min-height: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 body, h1, p, ul, ol {
