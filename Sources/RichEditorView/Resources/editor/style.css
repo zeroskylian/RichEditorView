@@ -25,9 +25,14 @@ html {
 }
 
 body {
-    min-height: 100%;
-    overflow: auto;
-    font: -apple-system-body;
+  font-family: Helvetica;
+  font-size: 14px;
+  word-wrap: break-word;
+  -webkit-text-size-adjust: none;
+  -webkit-nbsp-mode: space;
+  word-break: break-all;
+  overflow: auto;
+  min-height: 100%;
 }
 
 body, h1, p, ul, ol {
