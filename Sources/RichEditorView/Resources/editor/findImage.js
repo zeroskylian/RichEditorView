@@ -20,7 +20,7 @@ ZL.replaceImageSrc = function (info) {
   let screenWidth = parseInt(window.screen.availWidth * 0.9);
   for (let i = 0; i < images.length; i++) {
     let url = images[i].getAttribute("src");
-    if (url.indexOf(info.URLKey) == 0) {
+    if (url.indexOf(info.URLKey) === 0) {
       images[i].setAttribute("src", info.LocalPathKey);
       let width = images[i].getAttribute("width");
       if (!width) {
@@ -68,6 +68,8 @@ ZL.replaceImageSrc = function (info) {
       }
       images[i].removeAttribute("width");
       images[i].removeAttribute("height");
+      images[i].removeAttribute("_owidth");
+      images[i].removeAttribute("_oheight");
       break;
     }
   }
