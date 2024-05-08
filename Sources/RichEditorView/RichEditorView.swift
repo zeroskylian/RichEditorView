@@ -107,6 +107,9 @@ public class RichEditorWebView: WKWebView {
     /// Value that stores whether or not the content should be editable when the editor is loaded.
     /// Is basically `isEditingEnabled` before the editor is loaded.
     private var editingEnabledVar = true
+    
+    /// webview isInspectable
+    public var isInspectable: Bool = false
         
     /// The HTML that is currently loaded in the editor view, if it is loaded. If it has not been loaded yet, it is the
     /// HTML that will be loaded into the editor view once it finishes initializing.
@@ -155,6 +158,10 @@ public class RichEditorWebView: WKWebView {
         webView.scrollView.bounces = false
         webView.scrollView.delegate = self
         webView.scrollView.clipsToBounds = false
+        
+        if #available(iOS 16.4, *) {
+            webView.isInspectable = self.isInspectable
+        }
         addSubview(webView)
         
         if let filePath = Bundle.module.url(forResource: "rich_editor", withExtension: "html") {
