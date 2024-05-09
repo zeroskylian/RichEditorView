@@ -26,7 +26,6 @@ ZL.replaceImageSrc = function (info) {
       if (!width) {
         images[i].onload = function (e) {
           let _width = e.target.width;
-          console.log(_width);
           if (!_width) {
             _width = screenWidth;
           }
