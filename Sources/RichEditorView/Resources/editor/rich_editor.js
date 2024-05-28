@@ -524,6 +524,22 @@ RE.removeElementById = function(elementId) {
     }
 };
 
+RE.replaceNodeById = function (oldNodeId, newNodeContent) {
+    // 获取旧节点
+    var oldNode = document.getElementById(oldNodeId);
+    if (!oldNode) {
+        console.log("元素未找到");
+        return;
+    }
+    
+    // 创建新节点
+    var newNode = document.createElement("div");
+    newNode.innerHTML = newNodeContent;
+    
+    // 替换节点
+    oldNode.parentNode.replaceChild(newNode, oldNode);
+};
+
 window.onload = function() {
     RE.callback("ready");
 };

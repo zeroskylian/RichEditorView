@@ -441,6 +441,10 @@ public class RichEditorWebView: WKWebView {
         runJS("RE.removeElementById(\"\(id)\")")
     }
     
+    public func replaceNodeById(_ id: String, htmlContent: String) {
+        runJS("RE.replaceNodeById(\'\(id)\', \'\(htmlContent)\')")
+    }
+    
     /// Runs some JavaScript on the WKWebView and returns the result
     /// If there is no result, returns an empty string
     /// - parameter js: The JavaScript string to be run
