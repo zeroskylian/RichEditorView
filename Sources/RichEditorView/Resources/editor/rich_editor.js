@@ -515,6 +515,15 @@ RE.getRelativeCaretYPosition = function() {
     return y;
 };
 
+RE.removeElementById = function(elementId) {
+    let element = document.getElementById(elementId);
+    if (element) {
+        element.parentNode.removeChild(element);
+    } else {
+        console.log("元素未找到");
+    }
+};
+
 window.onload = function() {
     RE.callback("ready");
 };

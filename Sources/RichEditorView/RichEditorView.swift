@@ -437,6 +437,10 @@ public class RichEditorWebView: WKWebView {
         runJS("RE.addRowToTable()")
     }
     
+    public func removeElementById(id: String) {
+        runJS("RE.removeElementById(\(id))")
+    }
+    
     /// Runs some JavaScript on the WKWebView and returns the result
     /// If there is no result, returns an empty string
     /// - parameter js: The JavaScript string to be run
