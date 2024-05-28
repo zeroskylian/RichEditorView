@@ -357,6 +357,17 @@ RE.focusAtPoint = function(x, y) {
     RE.editor.focus();
 };
 
+RE.setCursorAtBegining = function() {
+    var el = document.getElementById("editor");
+    var range = document.createRange();
+    var sel = window.getSelection();
+    range.setStart(el.childNodes[0], 0);
+    range.collapse(true);
+    sel.removeAllRanges();
+    sel.addRange(range);
+    el.focus();
+}
+
 RE.blurFocus = function() {
     RE.editor.blur();
 };
