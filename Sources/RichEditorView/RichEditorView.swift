@@ -437,12 +437,12 @@ public class RichEditorWebView: WKWebView {
         runJS("RE.addRowToTable()")
     }
     
-    public func removeElementById(id: String) {
-        runJS("RE.removeElementById(\"\(id)\")")
+    public func removeElementById(id: String, handler: ((String) -> Void)? = nil) {
+        runJS("RE.removeElementById(\"\(id)\")", handler: handler)
     }
     
-    public func replaceNodeById(_ id: String, htmlContent: String) {
-        runJS("RE.replaceNodeById(\'\(id)\', \'\(htmlContent)\')")
+    public func replaceNodeById(_ id: String, htmlContent: String, handler: ((String) -> Void)? = nil) {
+        runJS("RE.replaceNodeById(\'\(id)\', \'\(htmlContent)\')", handler: handler)
     }
     
     /// Runs some JavaScript on the WKWebView and returns the result
