@@ -438,7 +438,7 @@ public class RichEditorWebView: WKWebView {
     }
     
     public func removeElementById(id: String) {
-        runJS("RE.removeElementById(\(id))")
+        runJS("RE.removeElementById(\"\(id)\")")
     }
     
     /// Runs some JavaScript on the WKWebView and returns the result
