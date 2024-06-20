@@ -400,6 +400,10 @@ public class RichEditorWebView: WKWebView {
         runJS("RE.focus()")
     }
     
+    public func focus(handler: ((String) -> Void)? = nil) {
+        runJS("RE.focus()", handler: handler)
+    }
+    
     public func focus(at: CGPoint) {
         runJS("RE.focusAtPoint(\(at.x), \(at.y))")
     }
